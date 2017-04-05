@@ -26,6 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'byebug', platform: :mri
   gem 'database_cleaner'
+  gem 'poltergeist'
 end
 
 group :development do
