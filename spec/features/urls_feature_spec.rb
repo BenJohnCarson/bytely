@@ -23,6 +23,7 @@ feature 'urls' do
   context "after adding a url" do
     
     let(:new_url) { "www.youtube.com" }
+    # let(:test_domain) { "http://127.0.0.1:42781/b" }
     
     before do
       visit '/'
@@ -32,6 +33,10 @@ feature 'urls' do
     
     scenario "should display original url" do
       expect(page).to have_content new_url
+    end
+    
+    scenario "should display short url" do
+      # expect(page).to have_content test_domain TODO think of a way to test this
     end
   end
 end

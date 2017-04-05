@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Url, type: :model do
   
-  let(:url) { build(:url) }
+  let(:url)       { build(:url) }
+  let(:saved_url) { create(:url) }
   
   it "valid with a valid url" do
     expect(url).to be_valid
@@ -33,6 +34,13 @@ RSpec.describe Url, type: :model do
   describe "#decode" do
     it "takes a string and returns the original integer" do
       expect(url.decode("bM")).to eq 100
+    end
+  end
+  
+  describe "#create_short_url" do
+    it "creates a short url from current domain and url id" do
+      domain = "http://domain.com/"
+      expect(saved_url.create_short_url(domain, saved_url.id)).to eq "#{domain}/#{saved_url.encode(saved_url.id)}"
     end
   end
 end

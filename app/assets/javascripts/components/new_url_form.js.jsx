@@ -47,7 +47,7 @@ var NewUrlForm = React.createClass({
     return (
       <form className="form-inline" onSubmit={this.handleAdd}>
         <div className="form-group">
-          <input type="text"
+          <input type="url"
                  className="form-control"
                  name="original_url"
                  placeholder="Your URL"
