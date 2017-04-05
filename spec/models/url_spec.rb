@@ -19,8 +19,8 @@ RSpec.describe Url, type: :model do
   end
   
   it "invalid if url already exists in database" do
-    url1 = create(:url, original_url: "www.google.com")
-    url2 = build(:url, original_url: "www.google.com")
+    url1 = create(:url, original_url: "www.facebook.com")
+    url2 = build(:url, original_url: "www.facebook.com")
     expect(url2.valid?).to be false
   end
   

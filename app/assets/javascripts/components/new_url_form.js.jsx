@@ -9,15 +9,38 @@ var NewUrlForm = React.createClass({
   },
   
   handleAdd: function(e) {
-    
+    e.preventDefault();
+    var self = this;
+    if (this.validForm()) {
+      $.ajax({
+        url: '/urls',
+        method : 'POST',
+        data: { url: self.state },
+        success: function(data) {
+          self.props.handleAdd(data);
+          self.setState(self.getInitialState());
+        },
+        error: function(xhr, status, error) {
+          alert("Couldn't add the URL: ", error);
+        }
+      })
+    } else {
+      alert("Please enter a URL");
+    }
   },
   
   validForm: function() {
-    
+    if (this.state.original_url) {
+      return true;
+    } else {
+      return false;
+    }
   },
   
   handleChange: function(e) {
-    
+    var input_name = e.target.name;
+    var value = e.target.value;
+    this.setState({ [input_name] : value});
   },
 
   render: function() {

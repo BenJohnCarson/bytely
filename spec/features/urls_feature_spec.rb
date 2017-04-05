@@ -19,4 +19,19 @@ feature 'urls' do
       expect(page).to have_button 'Add'
     end
   end
+  
+  context "after adding a url" do
+    
+    let(:new_url) { "www.youtube.com" }
+    
+    before do
+      visit '/'
+      fill_in 'original_url', with: new_url
+      click_button 'Add'
+    end
+    
+    scenario "should display original url" do
+      expect(page).to have_content new_url
+    end
+  end
 end
