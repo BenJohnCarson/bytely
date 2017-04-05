@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :url do
-    original_url "MyText"
-    short_url "MyString"
+    original_url { Faker::Internet.url }
   end
 end

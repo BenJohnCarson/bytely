@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'valid_url'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'faker'
 end
 
 group :development do
