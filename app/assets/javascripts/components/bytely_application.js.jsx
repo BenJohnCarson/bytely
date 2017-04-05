@@ -7,7 +7,8 @@ var BytelyApplication = React.createClass({
           <p>by Ben Carson</p>
         </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-4">
+            <NewUrlForm />
           </div>
         </div>
       </div>
