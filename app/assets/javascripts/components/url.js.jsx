@@ -13,7 +13,7 @@ var Url = React.createClass({
           <a href={url.original_url}>{url.original_url}</a>
         </td>
         <td>
-          <a href={url.short_url}>{url.short_url}</a>
+          <a id={"short_url_" + url.id} href={url.short_url}>{url.short_url}</a>
         </td>
       </tr>
     )

@@ -22,8 +22,7 @@ feature 'urls' do
   
   context "after adding a url" do
     
-    let(:new_url) { "www.youtube.com" }
-    # let(:test_domain) { "http://127.0.0.1:42781/b" }
+    let(:new_url) { "https://www.google.co.uk" }
     
     before do
       visit '/'
@@ -36,7 +35,14 @@ feature 'urls' do
     end
     
     scenario "should display short url" do
-      # expect(page).to have_content test_domain TODO think of a way to test this
+      url = URI.parse(current_url)
+      expect(page).to have_text "#{url}"
+    end
+    
+    xscenario "clicking on short url takes you to original website" do # TODO test keeps timing out, alternative test redirect in controller
+      url = URI.parse(current_url)
+      click_link("#{url}b")
+      expect(page.current_url).to eq new_url
     end
   end
 end

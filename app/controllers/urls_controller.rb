@@ -18,7 +18,6 @@ class UrlsController < ApplicationController
   
   def show
     url = Url.find_by(short_code: params[:short_code])
-    puts url.original_url
     redirect_to url.original_url
   end
   
