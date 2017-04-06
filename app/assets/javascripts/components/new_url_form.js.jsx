@@ -23,7 +23,7 @@ var NewUrlForm = React.createClass({
         error: function(xhr, status, error) {
           alert("Couldn't add the URL: ", error);
         }
-      })
+      });
     } else {
       alert("Please enter a URL");
     }

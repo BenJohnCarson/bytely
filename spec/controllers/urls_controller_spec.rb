@@ -68,9 +68,14 @@ RSpec.describe UrlsController, type: :controller do
       @url.save
     end
     
-    it "redirects to the original url" do
+    it "redirects to the original url if params contain short_code" do
       get :show, params: { short_code: @url.short_code }
       expect(response).to redirect_to(@url.original_url)
+    end
+    
+    it "renders a json if params contain url id" do
+      get :show, params: { id: @url.id }
+      expect(response.content_type).to include "application/json"
     end
     
     it "has a 302 status code" do

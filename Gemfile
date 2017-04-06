@@ -25,7 +25,6 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'factory_girl_rails'
-  gem 'byebug', platform: :mri
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'faker'

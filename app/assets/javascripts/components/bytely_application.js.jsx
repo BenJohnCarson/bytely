@@ -40,7 +40,11 @@ var BytelyApplication = React.createClass({
           </div>
         </div>
         <div className="row">
-          <div className="col-md-4">
+          <div id="stats" className="col-md-5">
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6">
             <UrlTable urls={this.state.urls} />
           </div>
         </div>

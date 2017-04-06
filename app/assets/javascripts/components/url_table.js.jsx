@@ -12,14 +12,15 @@ var UrlTable = React.createClass({
       <table className="table table-striped">
         <thead>
           <tr>
-            <th className="col-md-3">Original Url</th>
+            <th className="col-md-1">Original Url</th>
             <th className="col-md-2">Short Url</th>
+            <th className="col-md-3"></th>
           </tr>
         </thead>
         <tbody>
           {urls}
         </tbody>
       </table>
-    )
+    );
   }
 });

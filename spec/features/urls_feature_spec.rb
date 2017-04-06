@@ -24,6 +24,7 @@ feature 'urls' do
     
     let(:new_url) { "https://www.google.co.uk" }
     
+    
     before do
       visit '/'
       fill_in 'original_url', with: new_url
@@ -39,10 +40,8 @@ feature 'urls' do
       expect(page).to have_text "#{url}"
     end
     
-    xscenario "clicking on short url takes you to original website" do # TODO test keeps timing out, alternative test redirect in controller
-      url = URI.parse(current_url)
-      click_link("#{url}b")
-      expect(page.current_url).to eq new_url
+    scenario "should display a stats button" do
+      expect(page).to have_link "Stats"
     end
   end
 end
