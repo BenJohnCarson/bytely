@@ -88,6 +88,7 @@ Given more time, there are several things I'd like to extend upon
 * Provide more detailed stats information
     * Move the visits and date\_last\_visted attributes of url into a seperate visit model
     * This would allow the url to have many visits to display, with the date and time of each one
+    * Use the chartkick gem to create graphs visualising visits per day etc
 * Enhance the look
     * Make css transition and fadein so that the stats table appears more naturally
     * Add a hide button to remove the stats table
