@@ -16,7 +16,7 @@ class Url < ApplicationRecord
     self.short_code = encode(id)
   end
   
-  # TODO extract out into a new visit model- allocreaws tracking dates of multiple visits
+  # TODO extract out into a new visit model- will allow tracking dates of multiple visits
   def add_visit
     self.visits += 1
     self.date_last_visit = DateTime.now
