@@ -96,3 +96,4 @@ Given more time, there are several things I'd like to extend upon
 * Clean up the url model
     * Make better use of the encode and decode methods rather than storing short\_url and short\_code in the database
 * Add a method to sanitze urls before saving, to prevent multiple entries where different urls point to the same page e.g. ```https://www.google.co.uk/?gws_rd=ssl``` and ```https://www.google.co.uk``` both redirect to google
+* Allow stats table to automatically update when clicking on a link, currently requires a page refresh
