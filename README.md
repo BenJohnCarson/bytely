@@ -1,4 +1,5 @@
 # Bytely
+#### A URL shortener
 #### Technologies: Ruby on Rails, React, Bootstrap, Rspec, Capybara
 
 ## Index
@@ -12,7 +13,7 @@
 Here's the live version on Heroku: [Bytely](https://byte1y.herokuapp.com/)
 
 ## <a name="Task">Task</a>
-To create URL shortener, instructions [here](https://github.com/makersacademy/url_shortener_tech_test)
+To create a URL shortener webapp, instructions [here](https://github.com/makersacademy/url_shortener_tech_test)
 
 The app utilises a rails backend as an api which provides data in the form of JSON objects to the react front end.
 
