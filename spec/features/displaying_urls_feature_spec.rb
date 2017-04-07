@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'urls' do
+feature 'displaying urls' do
   context 'visiting landing page' do
     
     before do
@@ -38,10 +38,6 @@ feature 'urls' do
     scenario "should display short url" do
       url = URI.parse(current_url)
       expect(page).to have_text "#{url}"
-    end
-    
-    scenario "should display a stats button" do
-      expect(page).to have_link "Stats"
     end
   end
 end

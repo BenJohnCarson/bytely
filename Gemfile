@@ -29,6 +29,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'faker'
   gem 'rails-controller-testing'
+  gem 'timecop'
 end
 
 group :development do

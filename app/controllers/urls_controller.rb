@@ -19,6 +19,8 @@ class UrlsController < ApplicationController
   def show
     if params[:short_code]
       url = Url.find_by(short_code: params[:short_code])
+      url.add_visit
+      url.save
       redirect_to url.original_url
     else
       render json: Url.find(params[:id])

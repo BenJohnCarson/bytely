@@ -25,22 +25,43 @@ RSpec.describe Url, type: :model do
     expect(url2.valid?).to be false
   end
   
-  describe "#encode" do
-    it "takes an integer and bijectively encodes it to a string" do
-      expect(url.encode(100)).to eq "bM"
-    end
-  end
-  
-  describe "#decode" do
-    it "takes a string and returns the original integer" do
-      expect(url.decode("bM")).to eq 100
+  describe "#create_short_code" do
+    it "encodes it's id into a short code" do
+      expect(saved_url.create_short_code(10)).to eq "k"
     end
   end
   
   describe "#create_short_url" do
     it "creates a short url from current domain and url id" do
       domain = "http://domain.com/"
-      expect(saved_url.create_short_url(domain, saved_url.id)).to eq "#{domain}/#{saved_url.encode(saved_url.id)}"
+      expect(saved_url.create_short_url(domain, 10)).to eq "#{domain}/k"
+    end
+  end
+  
+  describe "#init" do
+    it "sets visits to 0 if it's not already set" do
+      expect(saved_url.init).to eq 0
+    end
+    
+    it "leaves visits unchanged if already set" do
+      saved_url.add_visit
+      expect(saved_url.init).to eq 1
+    end
+  end
+  
+  describe "#add_visit" do
+    
+    before do
+      Timecop.freeze(Time.now)
+    end
+    
+    it "increments visits" do
+      expect{ saved_url.add_visit }.to change{ saved_url.visits }.by(1)
+    end
+    
+    it "adds a date to date_last_visit" do
+      saved_url.add_visit
+      expect(saved_url.date_last_visit).to eq Date.today
     end
   end
 end
